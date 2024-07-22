@@ -6,16 +6,24 @@
     <title>Background Image Example</title>
     <style>
         body {
-            background-image: url('https://github.com/username/repository/raw/branch/images/1.jpeg');
-            background-size: cover; /* Adjust this if needed */
-            background-position: center; /* Adjust this if needed */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://github.com/hackerr3/imazes/raw/master/1.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Welcome to My Website</h1>
-        <p>We're glad to have you here!</p>
-    </div>
+    <div class="message">We Love Me</div>
 </body>
 </html>

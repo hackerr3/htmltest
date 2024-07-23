@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Image Example</title>
+    <title>Side-by-Side Images</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
         body {
             margin: 0;
             height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('https://github.com/hackerr3/imazes/raw/master/1.jpeg');
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .left, .right {
+            flex: 1;
+            height: 100%;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            color: white;
-            font-family: 'Pacifico', cursive;
-            position: relative;
-            overflow: hidden;
+        }
+
+        .left {
+            background-image: url('https://github.com/hackerr3/imazes/raw/master/n1.jpg');
+        }
+
+        .right {
+            background-image: url('https://github.com/hackerr3/imazes/raw/master/1.jpeg');
         }
 
         .message {
             position: absolute;
-            bottom: 28%;
-            left: 37%;
+            bottom: 40%;
+            right: 40%;
             font-size: 3rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
             background: linear-gradient(45deg, #ff0000, #ff7300, #fffc00, #00ff00, #00cfff, #8000ff);
@@ -34,6 +45,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: float 5s ease-in-out infinite, colorChange 5s linear infinite;
+            z-index: 1;
+            align-self: center; /* Center message vertically */
         }
 
         @keyframes float {
@@ -49,6 +62,10 @@
     </style>
 </head>
 <body>
-    <div class="message">Nater Loves Me</div>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="message">We Love Me</div>
 </body>
 </html>

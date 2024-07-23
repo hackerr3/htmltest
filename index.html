@@ -3,83 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side-by-Side Images with Smooth Transition</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .left, .right {
-            flex: 1;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            border-radius: 0 25px 25px 0; /* Rounded corners */
-        }
-
-        /* .right {
-            background-image: url('https://github.com/hackerr3/imazes/raw/master/n1.jpg');
-        } */
-
-        .left {
-            background-image: url('https://github.com/hackerr3/imazes/raw/master/1.jpeg');
-            border-radius: 25px 0 0 25px; /* Rounded corners */
-        }
-
-        .gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0) 49.5%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 50.5%);
-            pointer-events: none; /* Ensure it does not interfere with clicks */
-        }
-
-        .message {
-            position: absolute;
-            bottom: 40%;
-            right: 40%;
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffc00, #00ff00, #00cfff, #8000ff);
-            background-size: 600% 600%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: float 5s ease-in-out infinite, colorChange 5s linear infinite;
-            z-index: 1;
-            align-self: center; /* Center message vertically */
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
-
-        @keyframes colorChange {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-    </style>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Correct path to the CSS file -->
 </head>
 <body>
     <div class="container">
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="gradient-overlay"></div> <!-- Gradient overlay for smooth transition -->
+        <div class="image-container">
+            <img src="https://github.com/hackerr3/imazes/blob/master/n1.jpg" alt="Background Image">
+        </div>
+        <div class="login-form">
+            <h1>Login</h1>
+            <form action="#">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
-    <div class="message">We Love Me</div>
 </body>
 </html>

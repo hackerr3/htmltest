@@ -3,48 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side-by-Side Images with Smooth Transition</title>
+    <title>Background Image Example</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
         body {
             margin: 0;
             height: 100vh;
             display: flex;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .left, .right {
-            flex: 1;
-            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://github.com/hackerr3/imazes/raw/master/1.jpeg');
             background-size: cover;
             background-position: center;
-            border-radius: 0 25px 25px 0; /* Rounded corners */
-        }
-
-        .right {
-            background-image: url('https://github.com/hackerr3/imazes/raw/master/n1.jpg');
-        }
-
-        .left {
-            background-image: url('https://github.com/hackerr3/imazes/raw/master/1.jpeg');
-            border-radius: 25px 0 0 25px; /* Rounded corners */
-        }
-
-        .gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0) 49.5%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 50.5%);
-            pointer-events: none; /* Ensure it does not interfere with clicks */
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Pacifico', cursive;
+            position: relative;
+            overflow: hidden;
         }
 
         .message {
@@ -58,8 +34,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: float 5s ease-in-out infinite, colorChange 5s linear infinite;
-            z-index: 1;
-            align-self: center; /* Center message vertically */
         }
 
         @keyframes float {
@@ -75,11 +49,6 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="gradient-overlay"></div> <!-- Gradient overlay for smooth transition -->
-    </div>
     <div class="message">We Love Me</div>
 </body>
 </html>
